@@ -81,8 +81,9 @@ Key capabilities:
 /project
 
 ├─ browser_manager.py
+|
 ├─ utils.py
-
+|
 ├─ main.py
 
 ├─ screenshots/
