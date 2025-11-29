@@ -84,7 +84,6 @@ async def sign_up(page, username, password):
         await page.reload(wait_until="load")
 
         header_btn = page.locator("#profileMenuWrapper > div")
-        header_btn.highlight()
         await header_btn.click()
 
         return username
@@ -166,7 +165,6 @@ async def sign_in(page, username, password):
     await page.reload(wait_until="load")
 
     header_btn = page.locator("#profileMenuWrapper > div")
-    header_btn.highlight()
     await header_btn.click()
 
 # TODO 
