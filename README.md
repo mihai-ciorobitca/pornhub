@@ -111,3 +111,9 @@ Key capabilities:
 
 ### **3. Runner Loop**
 Loops the automation up to **1000 times**:
+
+```
+async def runner():
+    for _ in range(1000):
+        await main()
+```
