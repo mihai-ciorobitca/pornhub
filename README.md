@@ -1,157 +1,113 @@
-Pornhub Account Flow Automation (QA Portfolio Project)
+# 📌 Pornhub Account Automation – QA Portfolio Project
 
-This project is part of my QA Automation Engineer portfolio.
-It demonstrates a full end-to-end automated workflow on Pornhub.com, showcasing skills in Playwright automation, email verification testing, UI handling, resilient selectors, and high-volume scenario testing.
+This project is part of my **QA Automation Engineering portfolio**.  
+It showcases my ability to build **complex, end-to-end automated flows** using **Playwright**, including:
 
-🚀 Overview
+- UI automation  
+- Email verification  
+- Modal handling  
+- Stress testing  
+- Captcha observation  
+- Repeated workflow execution  
 
-This automation script:
+The automation interacts with **https://www.pornhub.com** because its multi-step registration flow provides a realistic example of a dynamic, real-world UI.
 
-Visits https://www.pornhub.com/
+⚠️ **Disclaimer:**  
+This project is for **portfolio and educational purposes only**.  
+It is **not** intended to bypass security, create real accounts, or violate Terms of Service.
 
-Automates the sign-up flow
+---
 
-Retrieves a verification code from my mailbox
+## 🧭 Table of Contents
 
-Enters the 6-digit code into Pornhub’s verification modal
+- [Overview](#overview)
+- [Features](#features)
+- [QA Skills Demonstrated](#qa-skills-demonstrated)
+- [Project Structure](#project-structure)
+- [How It Works](#how-it-works)
+- [Example Code Snippet](#example-code-snippet)
+- [Installation](#installation)
+- [Running the Script](#running-the-script)
+- [Ethical Notice](#ethical-notice)
+- [Future Enhancements](#future-enhancements)
 
-Completes DOB and TOS dialogs
+---
 
-Takes screenshots
+## 📌 Overview
 
-Performs automated sign-in testing
+This script automates the entire **signup + verification + login** workflow on Pornhub.com.  
+Key capabilities:
 
-Repeats the entire workflow for stress testing & captcha behavior observation
+- Fills forms  
+- Handles modals  
+- Retrieves real email verification codes  
+- Inputs 6-digit codes into UI fields  
+- Completes DOB and TOS prompts  
+- Takes final screenshots  
+- Repeats workflow for stress testing (up to 1000 iterations)
 
-This project is designed to showcase my QA abilities, not to create real accounts or bypass security.
+---
 
-🔧 Features
+## ✨ Features
 
-Automated navigation and modal handling
+- **Automated sign-up workflow**
+- **Email verification handling**
+- **DOB + TOS modal automation**
+- **Sign-in workflow**
+- **Screenshot capture**
+- **Stress-testing loop**
+- **Captcha trigger observation**
+- **Async Playwright browser management**
 
-Form completion and validation checking
+---
 
-Email verification code retrieval
+## 🧪 QA Skills Demonstrated
 
-Selector strategy for a dynamic UI
+- End-to-end UI automation  
+- Testing verification-based flows  
+- Dynamic locator handling  
+- Working with modal logic  
+- Error recovery + exception handling  
+- High-volume workflow execution  
+- Asynchronous programming  
+- Real-world debugging using screenshots  
+- Selector strategy for unstable UIs  
+- Handling repeated executions until captcha triggers
 
-Error-handling and fallback logic
+---
 
-Loop-based repeated testing (up to 1000 runs)
+## 📂 Project Structure
 
-Screenshot generation for each iteration
-
-Demonstrates detection of captcha triggers
-
-📂 Project Structure
 /project
- ├─ browser_manager.py
- ├─ utils.py
- ├─ main.py
- ├─ screenshots/
- └─ README.md
-
-🧪 QA Skills Demonstrated
-
-End-to-end UI automation
-
-Email verification workflow testing
-
-Modal/overlay handling
-
-Working with unstable selectors
-
-High-volume testing & behavior monitoring
-
-Asynchronous Python automation
-
-Playwright experience (page flows, locators, modal detection)
-
-Debugging with screenshots
-
-Error recovery & retry logic
-
-📝 How the Script Works
-🔹 Sign-Up Flow
-
-Open Pornhub
-
-Dismiss age verification
-
-Accept cookie banner
-
-Open Sign Up
-
-Enter email + password
-
-Fetch verification code
-
-Input 6 digits individually
-
-Handle DOB modal
-
-Handle TOS modal
-
-Confirm sign-up via profile menu
-
-🔹 Sign-In Flow
-
-Open Pornhub
-
-Dismiss modals
-
-Enter credentials
-
-Complete any re-shown prompts
-
-Confirm login by opening profile menu
-
-🔹 Runner
-
-Performs the sign-up flow repeatedly to test:
-
-UI stability
-
-Modal frequency changes
-
-CAPTCHA escalation
-
-Error occurrences
-
-⚙️ Requirements
-Python 3.9+
-Playwright
-Mailbox access for reading verification codes
+├─ browser_manager.py
+├─ utils.py
+├─ main.py
+├─ screenshots/
+└─ README.md
 
 
-Install dependencies:
+---
 
-pip install playwright
-playwright install
+## 📝 How It Works
 
-▶️ Run the Script
-python main.py
+### **1. Sign-Up Flow**
+- Navigate to Pornhub  
+- Handle age and cookie banners  
+- Open sign-up dialog  
+- Fill email and password  
+- Wait for email verification modal  
+- Retrieve verification code via `get_verification_code()`  
+- Input digits into UI fields  
+- Handle "Date of Birth" modal if shown  
+- Accept "Terms of Service" modal  
+- Confirm success through profile menu  
 
+### **2. Sign-In Flow**
+- Navigate to homepage  
+- Handle modals  
+- Enter credentials  
+- Complete DOB/TOS if shown  
+- Confirm login  
 
-Screenshots will be saved to:
-
-screenshots/<username>_screenshot.png
-
-⚠️ Ethical & Portfolio Notice
-
-This project was created exclusively for QA portfolio purposes.
-The automated accounts were test accounts, and the script is not intended for real-world account creation, bypassing captcha, or violating Pornhub.com’s Terms of Service.
-
-The goal is to demonstrate automation engineering skills only.
-
-📬 Future Enhancements
-
-Structured logging
-
-Retry strategies per modal
-
-Visual reports (HTML or Allure)
-
-Proxy routing for research
-
-Parallel runner
+### **3. Runner Loop**
+Loops the automation up to **1000 times**:
