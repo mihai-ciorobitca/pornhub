@@ -81,9 +81,9 @@ Key capabilities:
 /project
 
 ├─ browser_manager.py
-|
+
 ├─ utils.py
-|
+
 ├─ main.py
 
 ├─ screenshots/
@@ -179,7 +179,7 @@ Screenshots will be available in:
 /screenshots/<username>_screenshot.png
 ```
 
-### ⚠️ Ethical Notice
+## ⚠️ Ethical Notice
 
 This repo is built exclusively to showcase my QA automation skills.
 All accounts used were test accounts, and no real user data is involved.
