@@ -118,7 +118,7 @@ async def runner():
         await main()
 ```
 
-### **4. Example Code Snippet**
+## 💻 Example Code Snippet
 
 ```
 async def sign_up(page, username, password):
@@ -155,14 +155,14 @@ async def sign_up(page, username, password):
     return username
 ```
 
-### **5. Installation**
+### ⚙️ Installation
 
 ```
 pip install playwright
 playwright install
 ```
 
-### **6. Running the Script**
+### ▶️ Running the Script
 
 ```
 python main.py
@@ -174,13 +174,13 @@ Screenshots will be available in:
 /screenshots/<username>_screenshot.png
 ```
 
-### **7. Ethical Notice**
+### ⚠️ Ethical Notice
 
 This repo is built exclusively to showcase my QA automation skills.
 All accounts used were test accounts, and no real user data is involved.
 This automation must not be used to bypass security or create actual accounts.
 
-### **8. Future Enhancements**
+## 🚀 Future Enhancements
 
 - Logging system
 - HTML/Allure reports
