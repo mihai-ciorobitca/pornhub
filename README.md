@@ -79,8 +79,8 @@ Key capabilities:
 ## 📂 Project Structure
 
 /project
-├─ browser_manager.py
 
+├─ browser_manager.py
 ├─ utils.py
 
 ├─ main.py
