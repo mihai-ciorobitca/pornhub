@@ -117,3 +117,74 @@ async def runner():
     for _ in range(1000):
         await main()
 ```
+
+### **4. Example Code Snippet**
+
+```
+async def sign_up(page, username, password):
+    await page.goto("https://www.pornhub.com/")
+
+    # Handle age confirmation
+    age_btn = page.locator("#modalWrapMTubes > div > div > button")
+    if await age_btn.is_visible(timeout=5000):
+        await age_btn.click()
+
+    # Handle cookie banner
+    cookie_btn = page.locator("#cookieBannerWrapper button")
+    if await cookie_btn.is_visible(timeout=5000):
+        await cookie_btn.click()
+
+    # Open Sign-Up
+    await page.locator("#headerLoginLink.signIn").click()
+    await page.locator("#signUpBtn").click()
+    await page.locator(".emailPassSignButton").click()
+
+    # Fill email + password
+    await page.locator("#createEmail").fill(username)
+    await page.locator("#originalPassword").fill(password)
+
+    await page.locator("#js-signUpBtn").click()
+
+    # Wait for verification modal
+    verification_inputs = page.locator(".verificationCodeWrapper .js_verificationCodeInput")
+    code = await get_verification_code(username.split("@")[0])
+
+    for i, digit in enumerate(code):
+        await verification_inputs.nth(i).fill(digit)
+
+    return username
+```
+
+### **5. Installation**
+
+```
+pip install playwright
+playwright install
+```
+
+### **6. Running the Script**
+
+```
+python main.py
+```
+
+Screenshots will be available in:
+
+```
+/screenshots/<username>_screenshot.png
+```
+
+### **7. Ethical Notice**
+
+This repo is built exclusively to showcase my QA automation skills.
+All accounts used were test accounts, and no real user data is involved.
+This automation must not be used to bypass security or create actual accounts.
+
+### **8. Future Enhancements**
+
+- Logging system
+- HTML/Allure reports
+- Selector abstraction layer
+- Parallel execution
+- Mailbox provider swapping
+- UI flow visualizations
